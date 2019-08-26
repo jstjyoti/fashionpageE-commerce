@@ -290,6 +290,7 @@ footer{
 }
 .check-out{
   display: block;
+  font-family: 'Oswald';
   background-color: #486888;
   border: 2px solid #486888;
 }
