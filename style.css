@@ -843,6 +843,8 @@ form{
 }
 .block{
   padding:5px;
+  width:90%;
+  overflow: hidden;
   display:block;
 }
 .bottom-line::after{
