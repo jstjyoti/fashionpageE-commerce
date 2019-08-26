@@ -6,9 +6,10 @@
   clear: both;
   height: 0;
 }
+
 html, body{
   margin: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "RobotoSlab", Arial, sans-serif;
 }
 header{
   display:flex;
@@ -42,11 +43,11 @@ nav a{
 }
 .head-container a:hover{
   color:#00c8c8;
-  font-weight:900;
+  
 }
 nav a:hover{
   color:#3f3f3f;
-  font-weight:900;
+ 
 }
 .blue{
   border: 1px solid #486888;
@@ -94,20 +95,26 @@ nav a span{
   font-size: 20px;
 }
 .search{
-  display:inline;
-  padding:20px;
+  display:inline-block;
+  padding:20px 20px 0px 20px;
+  border-bottom:1px solid #ddd;
 }
 nav >a{
   display:inline;
 }
 .input-search{
-
-  border-top-style:none;
-  border-block-end-style: none;
+  display:inline-block;
+  border:none;
   color:#fff;
-  right:5px;
-  padding:5px;
-  border-bottom: 1px solid #000;
+
+}
+.search::after{
+  font: normal normal normal 14px/1 FontAwesome;
+  content:'\f002';
+  color:#fff;
+  display:inline-block;
+  height:10px;
+  width:5px;
 }
 .section-container ul li{
   margin-bottom: 60px;
@@ -164,8 +171,8 @@ nav >a{
   display:block;
   content:" ";
   height:3px;
-  width:200px;
-  background-image:linear-gradient(to right,#8a8787,#fff)
+  width:350px;
+  background-image:linear-gradient(to right,#c9c5c5,#c9c5c5)
 }
 .bottom{
   margin-top:20px;
@@ -198,7 +205,6 @@ footer{
 .ico-circle{
     padding: 16px;
     color:#3f3f3f;
-    border:0.1px solid #f0f0f0;
     background-color:transparent;
     border-radius: 35px;
     display: inline-block;
@@ -303,7 +309,7 @@ footer{
   width:200px;
   
   color:#3f3f3f;
-  background-image: linear-gradient(to right,from #0e0d0d,to #3f3f3f)
+  background-image: linear-gradient(to right,from #c5c2c2,to #c5c2c2)
 }
 
 main{
@@ -386,6 +392,7 @@ ul{
   padding:0px 20%;
   align-items: center;
   justify-content: space-between;
+  color:grey;
 
 }
 .card{
@@ -436,9 +443,13 @@ span.big{
   width: 24%;
   position: relative;
 }
+.top{
+  display:flex;
+
+}
 .col-4 img{
   margin: 0;
-  padding: 0;
+  padding: 3px;
   width: 100%;
 }
 .col-4 .wraper{
@@ -573,25 +584,33 @@ span.big{
   flex-direction: column;
 }
 .section-links{
+  padding: 50px 20%;
   background-color: #f8f8f8;
 }
 .section-links .col-half a{
   color: #fff;
   display: inline-block;
-  padding: 0 25px;
+  padding: 0;
+}
+
+.links-wrap >li {
+  display:inline-block;
+  vertical-align: top;
+  width:24%;
 }
 .section-links a:hover{
   color: #333;
   transition: all 300ms ease;
 }
 .links, .address{
-  width: auto;
+  width:100%;
   margin: 20px 10px;
 }
 .links h2, .address h2{
   color: #797576;
   font-size: small;
 }
+
 address{
   font-style: normal;
   font-size: small;
@@ -603,26 +622,13 @@ address{
   padding: 7px 0;
   font-size: small;
 }
-
-@media (min-width: 576px){
-  .section-links{
-      flex-direction: row;
-      padding: 10px 5%;
-  }
-  .links{
-      width: 45%;
-  }
-  .address{
-      width: 100%;
-  }
-  .section-links .col-half a{
-      padding: 0 10px;
-  }
+.links-wrap > links > li{
+  width:100%;
 }
 
 @media (min-width: 768px){
   .links, .address{
-      width: 19%;
+      width: 100%;
       margin: 20px 0;
       margin-bottom: 30px;
   }
@@ -837,7 +843,7 @@ form{
   content:" ";
   height:2px;
   width:250px;
-  background-image:linear-gradient(to right,#8a8787,#fff)
+  background-image:linear-gradient(to right,#ccc6c6,#ccc6c6);
 }
 form > div{
   padding:5px;
@@ -877,13 +883,24 @@ form > div > input{
   width:49%;
   display:flex;
   flex-direction: column;
+  
 
 }
+
 .table-wraper > .table1> ul{
   display:block;
-  width:90%;
+  background-color: #f0e8e8;
+  width:100%;
 }
 @media (max-width: 576px){
+  .head-container{
+    flex-direction: column;
+    padding:0px;
+
+  }
+  .head-container > ul{
+    flex-direction: row;
+  }
   .section2{
     flex-direction: column;
     width:auto;
@@ -979,11 +996,11 @@ form > div > input{
 }
 
 .table1 .data-wrapper{
-  background-color: #fff;
-  padding: 0 3%;
+  background-color: #f0e8e8;
+  
 }
 .table1 .data-wrapper > ul{
-  width:80%;
+  width:100%;
 }
 .data-wrapper > ul > li{
   display: flex;
@@ -1191,4 +1208,12 @@ li .val2 *{
   color: #486888;
   border: 1px solid #486888;
   font-weight: 700;
+}
+.card1 > .box{
+  padding:0px;
+  border: 0.5px solid #5f5c5c;
+  text-align: right;
+}
+*{
+  font-family: 'RobotoSlab','Oswald';
 }
