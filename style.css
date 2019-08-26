@@ -1082,6 +1082,7 @@ li .val2 *{
 
 .table2 .data-wrapper{
   background-color: #f0f0e8;
+  width:75%;
 }
 .table2 .data-wrapper > ul{
   width:100%;
