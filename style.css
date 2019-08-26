@@ -190,8 +190,9 @@ nav >a{
       float: left;
   }
 }
-.inline{
-  display:inline; 
+form >.div > input{
+  border:none;
+  border:1px solid #5f5c5c;
 }
 footer{
   padding: 10px 0px;
