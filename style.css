@@ -1336,8 +1336,17 @@ li .val2 *{
 .product-wraper > .description > .row > .stars{
   width:30%;
 }
-.desc{
-  
+.product-wraper > .description >.flex-wrap{
+  margin:0;
+  display:flex;
+  flex-direction:row;
+  justify-content: left;
+
+}
+
+.underline{
+  border-bottom:1px solid #b4b3b3;
+  width:75px;
 }
 *{
   font-family: 'RobotoSlab','Oswald';
