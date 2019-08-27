@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -91,7 +92,7 @@
 
       <div class=" center ">
           <p>Home>shop>details</p>
-          <h1>PRODUCT DETAILS</h1>
+          <h1 class="big">PRODUCT DETAILS</h1>
       </div>
     </section>
     <section class="product-wraper">
@@ -132,17 +133,29 @@
             lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
         </p>
       </div>
-      <div class="btn-wrapper">
-        <div class="">
-
-        </div>
-        <div class="">
-          
+       <!-- NEWLY ADDED -->
+       <div class="btn-wrapper">
+          <div class="qty-box">
+            <span>-</span>
+            <input name="qty" id="qty" value="20" type="number" />
+            <span>+</span>
           </div>
-          <div class="">
-          
-            </div>
-      </div>
+          <select name="size">
+            <option value="">Size</option>
+            <option value="">L</option>
+            <option value="">XL</option>
+          </select>
+          <select name="color">
+            <option value="">Color</option>
+            <option value="">Black</option>
+            <option value="">Blue</option>
+          </select>
+        </div>
+        <div class="btn-wrapper">
+          <button class="btn btn-bordered" onclick="">ADD TO CART</button>
+          <button class="btn btn-blue" onclick="">ADD TO WISHLIST</button>
+        </div>
+  <!-- END OF NEWLY ADDED -->
       <p class="grey underline">
         SHARE
       </p>
@@ -154,6 +167,51 @@
           <a href="#"><span class="ico-circle fa fa-google-plus"></span></a>  
       </div>
     </div>
+    </section>
+    <section class="section-blue-head blue">
+      <div class="head ">
+        <h1 class="white-txt">
+            DESCRIPTION
+        </h1>
+        <span class="notch-up"></span>
+      </div>
+      <div class="head ">
+          <h1 class="white-txt">
+              HISTORY
+          </h1>
+          <span class="notch-up"></span>
+        </div>
+        <div class="head ">
+            <h1 class="white-txt">
+                HISTORY
+            </h1>
+            <span class="notch-up"></span>
+          </div>
+    </section>
+    <section class="section-text">
+        <p class="clearfix small-txt blue-txt desc">Lorem Ipsum sit amet lorem ipsum lorem ipsum
+            Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+            lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+        </p>
+        <p class="clearfix small-txt blue-txt desc">
+            Lorem Ipsum sit amet Dolour. Lorem ipsum.
+        </p>
+        <div>
+        <div class="meter blue-m">
+          Cotton
+            <span style="width: 75%"></span>
+        </div>
+      </div>
+      <div>
+          <div class="meter blue-m">
+            ULK
+              <span style="width: 25%"></span>
+          </div>
+        </div>
+
     </section>
     <div class="section7 Featured bg-grey">
         <div class="title center">
