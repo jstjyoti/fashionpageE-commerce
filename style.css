@@ -1320,7 +1320,7 @@ li .val2 *{
   flex-direction:row;
   width:100%;
   align-content: space-between;
-  margin-bottom:-30px;
+  
   border-bottom: 1px solid #c5c2c2 ;
 }
 .product-wraper > .description > .row > .stars{
