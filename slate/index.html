@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/ico" href="assets/images/slate-logo-fav.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.min.css">
+    <title>Slate</title>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" />
+
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.candy.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.umber.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.gammel.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.zune.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.ocean.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.carbon.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo-wraper">
+                <a class="logo-link" href="#!">
+                    <img class="logo" src="assets/images/slate-logo-dark-128.png">
+                </a>
+            </div>
+            <div class="col-80">
+                <ul class="menu-group">
+                    <li>
+                        <a href="#!" title="Open SpreadSheet" onclick="modalOpen('modal-spreadsheet')">
+                            <span class="fa fa-table"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="btn-spreadsheet-modal" class="btn btn-close" onclick="modalClose('modal-spreadsheet');">
+                            <span class="fa fa-bar-chart"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" id="btn-export-html" title="Export HTML">
+                            <span class="fa fa-download"></span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="menu-group pull-right">
+                    <input type="text" name="width" size="4" placeholder="Width" id="chart-width" class="inp inp-width">
+                    <input type="text" name="height" size="4" placeholder="Height" id="chart-height"
+                        class="inp inp-height">
+                    <li>
+                        <a href="#!" title="Fit to Workspace" onclick="setChartContainerSize('100%', '100%')">
+                            <span class="fa fa-arrows-alt"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-20">
+
+                <ul class="menu-group">
+                    <li>
+                        <a href="#!" id="btn-open-json" title="View/Edit as JSON" onclick="openJSONEditor()">
+                            <span class="fa fa-code"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" id="btn-open-aside" onclick="openAsideMenu()">
+                            <span class="fa fa-sliders"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+    <div id="modal-container" class="modal-container">
+        <div id="modal-spreadsheet" class="modal">
+            <div id="modal-nav" class="modal-nav clearfix">
+                <div class="modal-nav-item-group">
+                    <button class="btn btn-upload" onclick="javascript:document.getElementById('fileUpload').click()">
+                        <span class="fa fa-2x fa-cloud-upload"></span>
+                    </button>
+                    <span id="txt-file-name" onclick="javascript:document.getElementById('fileUpload').click()"
+                        class="txt-filename">No File choosen</span>
+                    <div class="invisible">
+                        <input type="file" id="fileUpload" class="filestyle" data-classbutton="btn btn-primary"
+                            data-input="false" data-classicon="icon-plus" data-buttontext="Upload CSV" accept=".csv"
+                            hidden="hidden">
+                    </div>
+                    <select id="chart-type" style="display: none">
+                        <option disabled selected>Select Chart Type</option>
+                    </select>
+                </div>
+                <div class="modal-nav-item-group pull-right legend">
+                    <div class="legend-group">
+                        <span class="selected-x">
+                            X
+                        </span>
+                        <span class="selected-y">
+                            Y
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="modal-body" class="modal-body">
+                <div id="table-container" class="table-container">
+                    <table id="table-csv" class="table-csv">
+
+                    </table>
+                </div>
+            </div>
+            <div class="modal-foot">
+            </div>
+        </div>
+    </div>
+    <div id="workspace-container" class="workspace-container">
+        <main id="workspace" class="workspace full">
+            <div id="chart-container" class="chart-container">
+
+            </div>
+        </main>
+        <aside id="aside-menu-wraper" class="aside-menu-wraper" style="display: none">
+            <!-- <div id="aside-menu-wraper" class="aside-menu-wraper"> -->
+            <div id="aside-menu" class="aside-menu">
+
+            </div>
+            <!-- </div> -->
+        </aside>
+    </div>
+</body>
+<!-- 
+<script src="js/render.js"></script>
+<script src="js/aside/edit_json.js"></script>
+<script src="js/aside/exportHTML.js"></script>
+<script src="js/aside/handleClicks.js"></script>
+<script src="js/createchart.js"></script>
+<script src="js/filterLink.js"></script>
+<script src="js/dataSource.js"></script>
+<script src="js/aside/accordian.js"></script>
+<script src="js/aside/asideDataDesc.js"></script>
+<script src="js/render.js"></script>
+<script src="js/snackbar.js"></script>
+<script src="js/index.js"></script> -->
+<script src="js/slate.js"></script>
+<!-- <script src="js/slate.min.js"></script> -->
+
+</html>
